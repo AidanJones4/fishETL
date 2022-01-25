@@ -17,7 +17,7 @@ def get_fish_file_names(bucket):
     contents = bucket.objects.all()
     fish_files = []
     for content in contents:
-        if content.key.startswith("python/fish-market"):
+        if content.key.startswith("python/fish-market") and content.key.endswith(".csv"):
             fish_files.append(content.key)
 
     return fish_files
